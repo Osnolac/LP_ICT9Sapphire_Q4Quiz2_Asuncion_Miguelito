@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Analyzer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 5px;
+            background-color: rgb(158, 158, 158);
+        }
+        img {
+            width: 400px;
+            height: 490px;    
+        }
+        input {
+            height: 50px;
+            width: 390px;
+            text-align: center; 
+            font-size: 25px;
+            border: solid;
+            border-radius: 5px;
+            border-width: 2px;
+            background-color: rgb(0, 105, 175);
+            border-color: rgb(0, 105, 175);
+        }
+        #skibidiv {
+            padding-inline: 550px;
+        }
+        button {
+            background-color: rgb(32, 233, 32);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            height: 40px;
+            border:solid;
+            border-radius: 5px;
+            border-color: rgb(51, 170, 28);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1> Score Analyzer</h1>
+<br>
+<div class="container">
+    <details>
+        <summary>
+            <i>Instructions</i>
+    <br>
+
+        </summary>
+        <p>Put in your grades and click the button to get your general average.</p>
+    </details>
+<br>
+
+</div>
+<div class="container">
+    <div class="row bg-primary px-1 pt-3 pb-3">
+        <div class="col">
+            <img src="https://raketcontent.com/IMG_7772_46b2bc762e.jpeg" alt="mathematics">
+        </div>
+        <div class="col">
+            <img src="https://media.istockphoto.com/id/1370212289/vector/chemistry-symbols-icon-set-science-subject-doodle-design-education-and-study-concept-back-to.jpg?s=612x612&w=0&k=20&c=wPjQLUCqX_-vnrs6s4VSIUs0-PlRLzxl6C4zVtyU48M=" alt="science">
+        </div>
+        <div class="col">
+            <img src="https://superblog.supercdn.cloud/site_cuid_ckucmy84h97811nplkx3qfbgx/images/360f2268659604icxo3nduxkus3qgyb0jm5g26nrz36dy-1706005957048-compressed.jpg" alt="english">
+        </div>
+    </div>
+
+    <div class="row bg-info px-1 pt-2 pb-2">
+        <div class="col">
+            <input type="number" id="math">
+        </div>
+        <div class="col">
+            <input type="number" id="sci">
+        </div>
+        <div class="col">
+            <input type="number" id="eng">
+        </div>
+    </div>
+<br>
+<br>
+
+<br>
+    <div class="row" id="skibidiv">
+        <button type="button" onclick="avg()">Get Rating</button>
+
+        <script>
+            function avg() {
+                var math = document.getElementById('math').value;
+                var sci = document.getElementById('sci').value;
+                var eng = document.getElementById('eng').value;
+
+                let avg = (Number(math) + Number(sci) + Number(eng))/3;
+
+                if ((94<=avg)&&(avg<=100))
+                    alert("Your average is " + avg + " - Excellent");
+                else if  ((87<=avg)&&(avg<94))
+                    alert("Your average is " + avg + " - Above Satisfactory");
+                else if ((80<=avg)&&(avg<87))
+                    alert("Your average is " + avg + " - Satisfactory");
+                else if ((75<=avg)&&(avg<80))
+                    alert("Your average is " + avg + " - Needs Improvement");
+                else if ((70<=avg)&&(avg<75))
+                    alert("Your average is " + avg + " - Poor");
+                else
+                    alert("Your average is " + avg + " - N/A");
+
+            }
+        </script>
+    </div>
+<br><br><br>
+</div>
+        <p style="color:gray;"> Note: Grading Criteria and Equivalents can vary depending on school or district.
+<br><br><div style="border-bottom: solid;border-bottom-color: rgb(156, 156, 156);border-bottom-width: 2px;"></div><br>
+        <footer style="color:grey">Made by Miguelito Alonso B. Asuncion (2025)</footer>
+        <br>
+
+
+
+</body>
+</html>
